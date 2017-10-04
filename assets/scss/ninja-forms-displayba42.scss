@@ -1,0 +1,386 @@
+.ninja-forms-form-wrap * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  &:after, &:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+a.tooltip {
+  outline: none;
+  text-decoration: none;
+  strong {
+    line-height: 30px;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+  span {
+    z-index: 10;
+    display: none;
+    padding: 14px 20px;
+    margin-top: -10px;
+    margin-left: 28px;
+    width: 240px;
+    line-height: 16px;
+    z-index: 1;
+    position: relative;
+    &:before {
+      border-top: 10px solid transparent;
+      border-right: 15px solid #ccc;
+      border-bottom: 10px solid transparent;
+      content: "";
+      position: absolute;
+      left: -15px;
+    }
+  }
+  &:hover span {
+    display: inline;
+    position: absolute;
+    color: #333;
+    border: 1px solid #ccc;
+    background: #f1f1f1;
+  }
+  span {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-box-shadow: 5px 5px 8px #CCC;
+    -webkit-box-shadow: 5px 5px 8px #CCC;
+    box-shadow: 5px 5px 8px #CCC;
+  }
+}
+
+/*CSS3 extras*/
+
+#ui-datepicker-div {
+  background: #f1f1f1;
+  border-radius: 3px;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .ui-datepicker-header {
+    padding: 5px;
+    text-align: center;
+  }
+  .ui-datepicker-calendar {
+    th, td {
+      padding: 5px;
+      text-align: center;
+    }
+  }
+  .ui-icon {
+    text-indent: 0px;
+  }
+}
+
+.ui-datepicker-prev {
+  float: left;
+}
+
+.ui-datepicker-next {
+  float: right;
+}
+
+.ninja-forms-no-display {
+  display: none;
+}
+
+.ninja-forms-form {
+  .wp-switch-editor {
+    height: auto;
+  }
+  .mceIframeContainer {
+    background: #fff;
+  }
+}
+
+.ninja-forms-req-symbol {
+  color: #ff0000;
+}
+
+.ninja-forms-form {
+  .label-above label, .label-below label {
+    display: block;
+  }
+}
+
+.field-wrap, #ninja_forms_required_items {
+  margin-bottom: 20px;
+}
+
+#pass-strength-result {
+  background-color: #eee;
+  border-color: #ddd !important;
+  border-style: solid;
+  border-width: 1px;
+  margin: 13px 5px 5px 1px;
+  padding: 3px 5px;
+  text-align: center;
+  width: 200px;
+  &.bad {
+    background-color: #ffb78c;
+    border-color: #ff853c !important;
+  }
+  &.good {
+    background-color: #ffec8b;
+    border-color: #fc0 !important;
+  }
+  &.short {
+    background-color: #ffa0a0;
+    border-color: #f04040 !important;
+  }
+  &.strong {
+    background-color: #c3ff88;
+    border-color: #8dff1c !important;
+  }
+}
+
+.ninja-forms-cont {
+  position: relative;
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+.ninja-forms-field-error {
+  color: red;
+}
+
+.ninja-forms-form-wrap {
+  input, select, textarea {
+    width: auto;
+    height: auto;
+    vertical-align: inherit;
+  }
+  label {
+    font-weight: bold;
+  }
+  .list-checkbox-wrap ul label, .list-radio-wrap ul label {
+    font-weight: normal;
+  }
+}
+
+.field-wrap {
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+  &.label-left {
+    .ninja-forms-field, .ninja-forms-star-rating-control {
+      margin-left: 8px;
+    }
+  }
+  &.label-right {
+    .ninja-forms-field, .ninja-forms-star-rating-control {
+      margin-right: 8px;
+    }
+    label {
+      display: inline;
+    }
+  }
+  &.label-left label {
+    display: inline;
+  }
+}
+
+.label-above label {
+  margin-bottom: 5px;
+}
+
+.MultiFile-wrap {
+  display: inline-block;
+}
+
+/* ---------------------------------
+TEXT FIELDS & TEXTAREAS
+----------------------------------*/
+
+.text-wrap.label-left input, .profile_pass-wrap.label-left input, .textarea-wrap.label-left textarea {
+  margin-left: 10px;
+}
+
+.text-wrap.label-right input, .profile_pass-wrap.label-right input, .textarea-wrap.label-right textarea {
+  margin-right: 10px;
+}
+
+.text-wrap.label-above label, .textarea-wrap.label-above label {
+  display: block;
+  width: 100%;
+}
+
+.profile_pass-wrap input {
+  width: 100%;
+}
+
+.text-wrap {
+  &.label-above input, &.label-below input, &.label-inside input {
+    width: 100%;
+  }
+}
+
+.textarea-wrap {
+  &.label-above textarea, &.label-below textarea, &.label-inside textarea {
+    width: 100%;
+  }
+}
+
+.list-dropdown-wrap {
+  &.label-above select, &.label-below select {
+    width: 100%;
+  }
+}
+
+.textarea-wrap textarea {
+  height: 200px;
+}
+
+.profile_pass-wrap input {
+  margin-bottom: 10px;
+}
+
+/* ---------------------------------
+RADIO & CHECKBOX LISTS
+----------------------------------*/
+
+.list-radio-wrap span ul li input, .list-checkbox-wrap span ul li input {
+  margin-right: 5px;
+}
+
+.list-radio-wrap ul, .list-checkbox-wrap ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-radio-wrap ul li, .list-checkbox-wrap ul li {
+  list-style: none;
+}
+
+.list-radio-wrap ul li, .list-checkbox-wrap ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.list-radio-wrap {
+  &.label-left, &.label-right {
+    label {
+      float: left;
+    }
+    ul {
+      float: left;
+      li {
+        float: left;
+      }
+    }
+  }
+}
+
+.list-checkbox-wrap {
+  &.label-left, &.label-right {
+    label {
+      float: left;
+    }
+    ul {
+      float: left;
+      li {
+        float: left;
+      }
+    }
+  }
+}
+
+.rtl {
+  .list-radio-wrap {
+    &.label-left, &.label-right {
+      label {
+        float: right;
+      }
+      ul {
+        float: right;
+        li {
+          float: right;
+        }
+      }
+    }
+  }
+  .list-checkbox-wrap {
+    &.label-left, &.label-right {
+      label {
+        float: right;
+      }
+      ul {
+        float: right;
+        li {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.list-radio-wrap {
+  &.label-left ul li, &.label-right ul li {
+    padding: 0 8px;
+  }
+}
+
+.list-checkbox-wrap {
+  &.label-left ul li, &.label-right ul li {
+    padding: 0 8px;
+  }
+}
+
+.list-radio-wrap {
+  &.label-above ul li, &.label-below ul li {
+    padding: 0 0 0 10px;
+  }
+}
+
+.list-checkbox-wrap {
+  &.label-above ul li, &.label-below ul li {
+    padding: 0 0 0 10px;
+  }
+}
+
+/* ---------------------------------
+MULTI FIELD
+----------------------------------*/
+
+.list-multi-wrap {
+  &.label-left label, &.label-right select {
+    float: left;
+  }
+}
+
+/* ---------------------------------
+CREDIT CARD BLOCK
+----------------------------------*/
+
+.credit_card-wrap div {
+  label, input {
+    display: block;
+    width: 100%;
+  }
+  margin-bottom: 10px;
+  span {
+    font-size: 0.8em;
+  }
+}
+
+/* ---------------------------------
+HONEYPOT
+----------------------------------*/
+
+.hp-wrap, .honeypot-wrap {
+  display: none;
+}
