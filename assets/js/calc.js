@@ -1,9 +1,9 @@
 jQuery(document).ready(function() {
-	
+
 	var objectS = '';
 	var typeRepair = '';
 	var cost = '';
-	
+
 	jQuery('.building-area .area').click(function() {
 		objectS = jQuery(this).children('.area-title').html();
 		jQuery('.building-area .area').removeClass('active');
@@ -15,14 +15,14 @@ jQuery(document).ready(function() {
 		jQuery('.type-of-repair .area').removeClass('active');
 		jQuery(this).addClass('active');
 	});
-	
+
 	jQuery('.building-area .next-block').click(function() {
 		if(objectS != '') {
 			jQuery('.building-area').css('display', 'none');
 			jQuery('.type-of-repair').css('display', 'block');
 		}
 	});
-	
+
 	jQuery('.tcformpop-open1').click(function() {
 		if(objectS != '' && typeRepair != '') {
 			if(typeRepair == 'КОСМЕТИЧЕСКИЙ') {
@@ -70,15 +70,15 @@ jQuery(document).ready(function() {
 				}
 			}
 			jQuery('.form-subtitle').html(cost);
-			
+
 			var str0 = '';
-			
+
 			str0 = typeRepair + ' ' + objectS + ' ' + cost;
 
 			jQuery('.form-subtitle2').val(str0);
-			
-			
+
+
 		}
 	});
-	
+
 });

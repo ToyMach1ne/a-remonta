@@ -1274,7 +1274,6 @@ h5 {
 #myModal, #myModal1 {
   display: none;
   height: 500px;
-  top: calc(50% - 300px) !important;
 }
 
 #myModal {
@@ -1410,10 +1409,15 @@ h5 {
   }
 }
 
-#popmake-626, #popmake-828, #popmake-1449 {
+#popmake-626, #popmake-828, #popmake-1449, #popmake-831 {
   background-color: #fff;
   padding: 34px;
   border-radius: 10px;
+  min-width: 21%;
+    top: 99px;
+    left: 1144px;
+    opacity: 1;
+    display: block;
 }
 
 #popmake-626 .popmake-close, #popmake-828 .popmake-close, #popmake-1449 .popmake-close {

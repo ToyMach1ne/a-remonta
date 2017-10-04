@@ -640,3 +640,18 @@
     }
   }
 }
+
+//MyModal
+.myModalo_open {
+  opacity:1;
+  height: 100% !important;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.50);
+  .modal-dialog {
+    margin: 0 auto;
+    top: 130px !important;
+    .modal-content {
+      margin: 0 auto;
+    }
+  }
+}

@@ -63,3 +63,61 @@ jQuery(function() {
         });
         jQuery.validate();
     });
+
+//Modals
+//Header Recall
+jQuery('.popmake-callback').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#pum-626').fadeIn('400', function() {
+
+  });
+});
+jQuery('.pum-close').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#pum-626').fadeOut('400', function() {
+
+  });
+});
+
+
+//Узнать подробнее
+jQuery('.popmake-offer').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#pum-831').fadeIn('400', function() {
+
+  });
+});
+jQuery('.pum-close').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#pum-831').fadeOut('400', function() {
+
+  });
+});
+
+//Рассчитать стоимость заказа
+jQuery('.popmake-price').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#pum-828').fadeIn('400', function() {
+
+  });
+});
+jQuery('.pum-close').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#pum-828').fadeOut('400', function() {
+
+  });
+});
+
+//Оставить заявку
+jQuery('.tcformpop-open1').on('click', function(event) {
+  jQuery('#myModal1').fadeIn('400', function() {
+    jQuery('#myModal1').addClass('myModalo_open');
+  });
+});
+jQuery('.close').on('click', function(event) {
+  event.preventDefault();
+  jQuery('#myModal1').fadeOut('400', function() {
+
+  });
+  jQuery('#myModal1').removeClass('myModalo_open');
+});
