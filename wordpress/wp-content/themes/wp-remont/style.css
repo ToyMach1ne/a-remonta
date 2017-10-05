@@ -1,0 +1,14 @@
+/*
+  Theme Name:   WP remont
+  Theme URI:    https://github.com/crazyyy/wp-framework.git
+  Description:  Тема создана для сайта услуг ремонта квартир
+  Version:      2017-07-21
+  Author:       Antoniuk Vitali & friends
+  Author URI:   http://saitobaza.ru/
+  Tags:         HTML5, CSS3, WordPress, SCSS, Gulp, Node.js
+
+  License:  MIT
+  License URI:  http://opensource.org/licenses/mit-license.php
+*/
+
+@import url('css/main.css');

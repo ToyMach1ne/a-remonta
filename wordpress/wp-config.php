@@ -1,7 +1,7 @@
 <?php
-define('DB_NAME', 'DBNAME');
-define('DB_USER', 'DBUSER');
-define('DB_PASSWORD', 'DBPASS');
+define('DB_NAME', 'remont');
+define('DB_USER', 'remont');
+define('DB_PASSWORD', 'remont');
 
 define('DB_HOST', 'localhost');
 

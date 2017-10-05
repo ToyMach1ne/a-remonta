@@ -61,7 +61,6 @@ jQuery(function() {
                 height: '71px'
             });
         });
-        jQuery.validate();
     });
 
 //Modals
@@ -121,3 +120,6 @@ jQuery('.close').on('click', function(event) {
   });
   jQuery('#myModal1').removeClass('myModalo_open');
 });
+
+//Navbar
+jQuery( ".dropdown_item a" ).append( "<span class='caret'></span>" );
