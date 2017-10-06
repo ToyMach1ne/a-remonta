@@ -556,30 +556,33 @@
         height: 217px;
         width: 370px;
       }
-      .bg_block_item {
-        background-image:url(../img/timthumb_bg.jpg);
-        height: 217px;
-        width: 370px;
+      &:nth-child(4) {
+        .bg_block {
+          background-image:url(../img/timthumb_bg.jpg);
+        }
       }
-      .bg_block_item_2 {
-        background-image:url(../img/timthumb_bg_2.jpg);
-        height: 217px;
-        width: 370px;
+      &:nth-child(5) {
+        .bg_block {
+          background-image:url(../img/timthumb_bg_2.jpg);
+        }
       }
-      .bg_block_item_3 {
-        background-image:url(../img/timthumb_bg_3.jpg);
-        height: 217px;
-        width: 370px;
+      &:nth-child(6) {
+        margin-top: 20px;
+        .bg_block {
+          background-image:url(../img/timthumb_bg_3.jpg);
+        }
       }
-      .bg_block_item_4 {
-        background-image:url(../img/timthumb_bg_4.jpg);
-        height: 217px;
-        width: 370px;
+      &:nth-child(7) {
+        margin-top: 20px;
+        .bg_block {
+          background-image:url(../img/timthumb_bg_4.jpg);
+        }
       }
-      .bg_block_item_5 {
-        background-image:url(../img/timthumb_bg_5.jpg);
-        height: 217px;
-        width: 370px;
+      &:nth-child(8) {
+        margin-top: 20px;
+        .bg_block {
+          background-image:url(../img/timthumb_bg_5.jpg);
+        }
       }
     }
   }
@@ -606,6 +609,11 @@
           margin-top: 35px;
         }
       }
+        .col-xs-1 {
+          &:last-child {
+            display: none;
+          }
+        }
     }
   }
 }
@@ -685,11 +693,56 @@
   }
 }
 
+//Page (basic)
+.page {
+  #page {
+    .row {
+      margin-top: 30px;
+      .col-md-9 {
+        ul {
+          padding-left: 0;
+        }
+      }
+    }
+    aside {
+      #custom_html-2 {
+        img {
+              margin: 0 auto !important;
+        }
+      }
+    }
+  }
+}
+
 //Home styles
 .home {
   .navbar-header {
     .logo-img {
       padding-top: 10px;
+    }
+  }
+  #portfolio {
+    .row {
+      .col-xs-7 {
+        .fancybox {
+          .img-responsive {
+            width: 100%;
+            height: auto;
+            max-height:360px;
+          }
+        }
+      }
+      .smsrc {
+        a {
+          display: block;
+          width: 30%;
+          .img-responsive-small {
+          max-width:240px;
+          max-height: 104px;
+          width: 100%;
+        }
+        }
+      }
     }
   }
 }
@@ -852,6 +905,55 @@
     aside {
       #recent-posts-2  {
         display: none;
+      }
+    }
+  }
+}
+
+//Price page
+.tseny {
+  #nav-header {
+    background-image: url(../img/25.jpg);
+  }
+  #page {
+    .row {
+      margin-top: 30px;
+    }
+    #prices {
+      margin-top: 0;
+      background: none;
+      padding: 0;
+      height: auto;
+      .row {
+        max-width: 945px;
+        .price-table {
+          .heading {
+            font-size: 12pt;
+          }
+        }
+        .popmake-price {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Error page
+.error404 {
+  .error_page_title {
+    background-image: url(../img/e404.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 100px 0;
+    h1 {
+      text-align: center;
+    }
+    a {
+      &:hover {
+        text-decoration: none;
       }
     }
   }

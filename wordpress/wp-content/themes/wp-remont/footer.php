@@ -1,6 +1,6 @@
  <div class="container-fluid" id="prefooter">
         <div class="container">
-            <div class="row">Мы работаем во всех районах в Санкт-Петербурга
+            <div class="row"><?php the_field('prefooter_text', 35); ?>
                 <br>
             </div>
         </div>
@@ -12,9 +12,8 @@
                   <img src="<?php echo get_template_directory_uri(); ?>/img/logo_footer.png" alt="">
                 </div>
                 <div class="col-xs-2">
-                    <br>Академия ремонта
-                    <br>тел. +7 (812) 603-44-17
-                    <br>
+                    <p><?php the_field('above_phone_text', 35); ?></p>
+                    <p>тел. <?php the_field('footer_phone', 35); ?></p>
                 </div>
                 <div class="col-xs-2">
                     <br>Мы в соц.сетях:
@@ -28,7 +27,7 @@
                 <div class="col-xs-5">
                   <?php wpeFootNav(); ?>
                   <div class="copy">
-                    <small>Любое использование, распространение, копирование и воспроизведение данных материалов без письменного согласия автора - запрещается!</small>
+                    <small><?php the_field('copyright', 35); ?></small>
                   </div>
                 </div>
             </div>

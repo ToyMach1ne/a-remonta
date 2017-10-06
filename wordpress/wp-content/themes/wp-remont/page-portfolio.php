@@ -21,8 +21,8 @@
                 </div>
             </div><!-- row -->
             <div id="fancygallery-1" class="fg-panel">
-             <div class="fg-navigation radykal-clearfix"></div>
 
+             <!-- <div class="fg-navigation radykal-clearfix"></div>
               <div class="fg-menu-selection radykal-clearfix ">
                 <div>
                     <a href="http://a-remonta.spb.ru/portfolio/0 " class="fg-theme-black fg-selected ">1</a>
@@ -64,109 +64,27 @@
                     <a href="http://a-remonta.spb.ru/portfolio/12 " class="fg-theme-black ">13</a>
                 </div>
               </div>
-              <p class="fg-album-description"></p>
+              <p class="fg-album-description"></p> -->
 
             <div class="fg-thumbHolder radykal-clearfix ">
+            <?php if( have_rows('gallery_portfolio') ): while ( have_rows('gallery_portfolio') ) : the_row();
+            // vars
+            $image_portfolio = get_sub_field('port_item');
+            $url = $image_portfolio['url']; ?>
 
               <div class="fg-listItem">
                   <div class="fg-wrapp">
                     <div class="fg-thumbnail-container">
-                      <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_1.jpg" alt="">
+                    <a href="<?php echo $url; ?>" rel="lightbox">
+                      <img src="<?php echo $image_portfolio['url']; ?>" alt="<?php echo $image_portfolio['alt'] ?>" / class="img-responsive">
+                    </a>
                     </div>
                     <div class="fg-title fg-title-outside"></div>
                   </div>
                   <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
               </div>
+            <?php endwhile; endif; ?>
 
-                <div class="fg-listItem ">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb " src="<?php echo get_template_directory_uri(); ?>/img/portfolio_2.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_3.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_4.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_5.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside "></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_6.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_7.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outsid "></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb " src="<?php echo get_template_directory_uri(); ?>/img/portfolio_8.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb" src="<?php echo get_template_directory_uri(); ?>/img/portfolio_9.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
-
-                <div class="fg-listItem">
-                  <div class="fg-wrapp">
-                    <div class="fg-thumbnail-container">
-                    <img class="fg-thumb " src="<?php echo get_template_directory_uri(); ?>/img/portfolio.jpg" alt="">
-                    </div>
-                    <div class="fg-title fg-title-outside"></div>
-                  </div>
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/shadow1.png " class="fg-shadow ">
-                </div>
 
              </div><!-- fg-thumbHolder -->
            </div><!-- fancygallery-1 -->

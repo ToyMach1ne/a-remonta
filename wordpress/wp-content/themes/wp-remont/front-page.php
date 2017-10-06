@@ -3,28 +3,27 @@
     <div class="container-fluid" id="header">
         <div class="container">
             <div class="row">
-                <h1>Ремонт квартир в Санкт-Петербурге <br>
-                    <span>Фиксированная прозрачная смета</span>
-                </h1>
+                <h1><?php the_field('fp_title'); ?></h1>
             </div>
             <div class="row">
                 <div class="col-xs-6 prices">
-                    <h3>95% ремонтных компаний срывают сроки ремонта, а только 5% выполняют ремонт в срок</h3> Наша компания выполняет ремонт точно в срок, в доказательство мы установили штраф за каждый день просрочки!
+                    <h3><?php the_field('yellow_text'); ?></h3>
+                    <p><?php the_field('second_banner_text'); ?></p>
                 </div>
                 <div class="col-xs-3">
                 </div>
                 <div class="col-xs-3 right-side">
-                    <a href="#" class="popmake-price pum-trigger">Вызвать сметчика БЕСПЛАТНО</a>
+                    <a href="#" class="popmake-price pum-trigger"><?php the_field('call_smet'); ?></a>
                     <br>
-                    <a href="#" class="popmake-price pum-trigger">Рассчитать заказ</a>
+                    <a href="#" class="popmake-price pum-trigger"><?php the_field('calc_order'); ?></a>
                     <br>
-                    <a href="http://a-remonta.spb.ru/ceni/">Почему у нас приемлемые цены?</a>
+                    <a href="/tseny.htm"><?php the_field('text_price'); ?></a>
                     <br>
                 </div>
             </div>
             <div class="center-block">
                 <div class="row" id="offer">
-                    Акция! Закажи ремонт до 15 сентября и получи монтаж натяжного потолка в подарок + бесплатную доставку и разгрузку стройматериалов!
+                    <?php the_field('stock_text'); ?>
                     <div class="row">
                         <div class="btn btn-orange" type="button">
                             <i class="fa fa-chevron-right"></i>
@@ -41,26 +40,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <i class="fa fa-check-square fa-lg"></i>&nbsp; Работаем без предоплаты
-                    <br>
-                    <i class="fa fa-check-square fa-lg"></i>&nbsp; Точная фиксированная смета
-                    <br>
-                    <i class="fa fa-check-square fa-lg"></i>&nbsp; Семидневная рабочая неделя
-                    <br>
-                    <i class="fa fa-check-square fa-lg"></i>&nbsp; Охраняемый склад, возможность видеонаблюдения
-                    <br>
-                    <i class="fa fa-check-square fa-lg"></i>&nbsp; Фото/видео отчет на электронную почту
-                    <br>
+                  <?php if( have_rows('steps_about') ): while ( have_rows('steps_about') ) : the_row(); ?>
+                      <i class="fa fa-check-square fa-lg"></i>&nbsp; <?php the_sub_field('step_item'); ?>
+                      <br>
+                  <?php endwhile; endif; ?>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/manager.jpg">
-                    <div><strong>Ваш личный менеджер<br>Илья Литвинов</strong>
-                        <br>
-                        <br> Звоните сейчас!
-                        <br>Расчет стоимости ремонта
-                        <br>займет недолгое время!
-                        <br>
-                    </div>
+                    <?php $image = get_field('mannger_img'); if( !empty($image) ): ?>
+                      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    <?php endif; ?>
+                    <div><?php the_field('manager_text'); ?></div>
                 </div>
             </div>
             <div class="row">
@@ -72,8 +61,8 @@
                 <div class="col-xs-1"></div>
                 <div class="col-xs-3">
                     <i class="fa fa-home fa-lg"></i>
-                    <h5>Честная детальная<br>
-                    прозрачная цена</h5> Прозрачная цена: исключая
+                    <h5>Честная детальная<br> прозрачная цена</h5>
+                    Прозрачная цена: исключая
                     <br>“внезапные” дополнительные работы.
                 </div>
                 <div class="col-xs-4">
@@ -130,87 +119,27 @@
         </div>
     </div><!-- about -->
 
-    <div id="prices" class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-3">
-                    <div class="price-table">
-                        <div class="heading">Косметический ремонт</div>
-                        <small>от</small> <strong>2000</strong> <small>руб./м<sup>2</sup></small>
-                        <div class="style_margin"></div>
-                        <div class="btn btn-orange" type="button"><i class="fa fa-chevron-right"></i>
-                            <a href="#" class="popmake-price pum-trigger">Узнать подробнее</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="price-table">
-                        <div class="heading">Капитальный ремонт</div>
-                        <small>от</small> <strong>5000</strong> <small>руб./м<sup>2</sup></small>
-                        <div class="style_margin"></div>
-                        <div class="btn btn-orange" type="button"><i class="fa fa-chevron-right"></i>
-                            <a href="#" class="popmake-price pum-trigger">Узнать подробнее</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="price-table">
-                        <div class="heading">Евроремонт</div>
-                        <small>от</small> <strong>7000</strong> <small>руб./м<sup>2</sup></small>
-                        <div class="style_margin"></div>
-                        <div class="btn btn-orange" type="button"><i class="fa fa-chevron-right"></i>
-                            <a href="#" class="popmake-price pum-trigger">Узнать подробнее</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3">
-                    <div class="price-table">
-                        <div class="heading">Элитный ремонт</div>
-                        <small>от</small> <strong>9000</strong> <small>руб./м<sup>2</sup></small>
-                        <div class="style_margin"></div>
-                        <div class="btn btn-orange" type="button"><i class="fa fa-chevron-right"></i>
-                            <a href="#" class="popmake-price pum-trigger">Узнать подробнее</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <a href="#" class="popmake-price pum-trigger"><img src="<?php echo get_template_directory_uri(); ?>/img/price5.jpg" alt=""></a>
-            </div>
-        </div>
-    </div><!-- prices -->
+    <?php get_template_part('relative_pages_form'); ?>
 
     <div id="attention" class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-xs-3">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/ceo.png" class="center-block img-responsive" alt="">
+                     <?php $image2 = get_field('engeneer_img'); if( !empty($image2) ): ?>
+                      <img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" />
+                     <?php endif; ?>
                 </div>
                 <div class="col-xs-6">
                     <div class="quote">
-                        Помните: подозрительно низкая цена - залог некачественного выполнения работ, использование некачественного стойматериала, и залог появление внезапных “дополнительных работ”.
-                        <br>
-                        <div class="engenner_tech">Владислав Зиновьев<br> (инженер-технолог)</div>
+                        <?php the_field('eng_quote'); ?>
+                        <div class="engenner_tech"><?php the_field('eng_title'); ?></div>
                     </div>
                 </div>
                 <div class="col-xs-3"></div>
             </div>
             <div class="row">
                 <div class="col-xs-10">
-                    <div class="quote2">
-                        В настоящее время рынок ремонтных услуг переполнен предложениями от множества “бригад профессионалов” и компаниями “с многолетним опытом”, обещающие воплотить ваши пожелания на самых выгодных условиях. На деле все происходит по другому.
-                        <br> Низкая цена — основной ошибочный критерий на который “клюет” клиент, неподозревая, что возникнут “дополнительные работы” и цена ремонта увеличивается почти вдвое!
-                        <br><strong>Не попадайтесь в эту ловушку!</strong>
-                        <br> Низкая цена также означает использование дешевой рабочей силы — непрофессионалы, далекие от понимания “качество”.
-                        <br> Такие работники потратят ваше время, деньги, испортят материалы. Затем фирму однодневку вы рискуете больше не увидеть.
-                        <br> Наша компания предоставляет честную точную прозрачную смету!
-                        <br> Уважаемые клиенты!
-                        <br> Мы уже устали переделывать квартиры после услуг таких “фирм с многолетним опытом”
-                        <br><strong>БУДЬТЕ БДИТЕЛЬНЫ!!<br>
-                        Помните! Законы экономики не позволяют получить что-то качественное задешево.<br>
-                        Здравомыслящий клиент никогда не будете сотрудничать с компанией предлагающая купить Mercedes по цене Жигули.</strong>
-                        <br>
-                    </div>
+                    <div class="quote2"><?php the_field('eng_descr'); ?></div>
                 </div>
                 <div class="col-xs-2"></div>
             </div>
@@ -222,128 +151,43 @@
             <div class="row">
                 <h3>Выполненные проекты</h3>
             </div>
+            <?php if( have_rows('gallery_block') ): while ( have_rows('gallery_block') ) : the_row();
+            // vars
+            $image_big = get_sub_field('big_img');
+            $url = $image_big['url']; ?>
             <div class="row">
                 <div class="col-xs-7">
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb.jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/1/1.jpg&w=671&h=359&zc=1&q=100" class="http://akademia-remonta.spb.ru/wp-content/themes/theme/img-responsive">
+                    <a href="<?php echo $url; ?>" class="fancybox" rel="lightbox">
+                        <img src="<?php echo $image_big['url']; ?>" alt="<?php echo $image_big['alt'] ?>" / class="img-responsive">
                     </a>
                 </div>
                 <div class="col-xs-5 ddsc">
-                    <h4>Трехкомнатная квартира</h4>
-                    <strong>Площадь:</strong> 89 м2. <strong>Сроки:</strong> 75 дней.
-                    <br>
-                    <strong>Вид ремонта:</strong> элитный.
-                    <br>
-                    <strong>Стоимость работ:</strong> 773 000 руб.
-                    <br>
-                    <strong>Стоимость черновых материалов:</strong> 216 354 руб.
-                    <br>
-                    <strong>Стоимость работ у конкурентов:</strong> 1 057 000 руб.
-                    <br>
-                    <strong>Прораб:</strong> Авдеев А. В.
-                    <br>
-                    <strong>Ответственный менеджер:</strong> Суханов Д. Е.
-                    <br>
+                    <h4><?php the_sub_field('apps_title'); ?></h4>
+                    <p>
+                    <?php if( have_rows('decscr_steps') ): while ( have_rows('decscr_steps') ) : the_row(); ?>
+                      <?php the_sub_field('descr_options_item'); ?>
+                    <?php endwhile; endif; ?>
+                    </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-7 smsrc">
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(1).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/1/2.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(2).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/1/3.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(3).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/1/4.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
+                    <?php if( have_rows('small_images') ): while ( have_rows('small_images') ) : the_row();
+                    // vars
+                    $image_small = get_sub_field('img_small_item');
+                    $url_small = $image_small['url']; ?>
+                      <a href="<?php echo $url_small; ?>" class="fancybox" rel="lightbox">
+                        <img src="<?php echo $image_small['url']; ?>" alt="<?php echo $image_small['alt'] ?>" / class="img-responsive-small">
+                      </a>
+                    <?php endwhile; endif; ?>
                 </div>
                 <div class="col-xs-5 ddsc">
                     <a class="remont-btn popmake-price pum-trigger" href="#"></a>
                 </div>
             </div>
+            <?php endwhile; endif; ?>
             <!-- -->
-            <div class="row">
-                <div class="col-xs-7">
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(4).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/2/1.jpg&w=671&h=359&zc=1&q=100" class="http://akademia-remonta.spb.ru/wp-content/themes/theme/img-responsive">
-                    </a>
-                </div>
-                <div class="col-xs-5 ddsc">
-                    <h4>Однокомнатная квартира</h4>
-                    <strong>Площадь:</strong> 42 м2. <strong>Сроки:</strong> 30 дней.
-                    <br>
-                    <strong>Вид ремонта:</strong> капитальный.
-                    <br>
-                    <strong>Стоимость работ:</strong> 284 000 руб.
-                    <br>
-                    <strong>Стоимость черновых материалов:</strong> 62 738 руб.
-                    <br>
-                    <strong>Стоимость работ у конкурентов:</strong> 458 000 руб.
-                    <br>
-                    <strong>Прораб:</strong> Еременко И. В.
-                    <br>
-                    <strong>Ответственный менеджер:</strong> Литвинов И. О.
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-7 smsrc">
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(5).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/2/2.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(6).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/2/3.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(7).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/2/4.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                </div>
-                <div class="col-xs-5 ddsc">
-                    <a class="remont-btn popmake-price pum-trigger" href="#"></a>
-                </div>
-            </div>
-            <!-- -->
-            <div class="row">
-                <div class="col-xs-7">
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(8).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/3/1.jpg&w=671&h=359&zc=1&q=100" class="http://akademia-remonta.spb.ru/wp-content/themes/theme/img-responsive">
-                    </a>
-                </div>
-                <div class="col-xs-5 ddsc">
-                    <h4>Двухкомнатная квартира</h4>
-                    <strong>Площадь:</strong> 68 м2. <strong>Сроки:</strong> 45 дней.
-                    <br>
-                    <strong>Вид ремонта:</strong> капитальный.
-                    <br>
-                    <strong>Стоимость работ:</strong> 357 000 руб.
-                    <br>
-                    <strong>Стоимость черновых материалов:</strong> 103 578 руб.
-                    <br>
-                    <strong>Стоимость работ у конкурентов:</strong> 473 000 руб.
-                    <br>
-                    <strong>Прораб:</strong> Авдеев А. В.
-                    <br>
-                    <strong>Ответственный менеджер:</strong> Суханов Д. Е.
-                    <br>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-7 smsrc">
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(9).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/3/2.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(10).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/3/3.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/img/timthumb(11).jpg" class="fancybox" rel="gallery">
-                        <img src="http://a-remonta.spb.ru/wp-content/plugins/radykal-fancy-gallery/admin/timthumb.php?src=http://a-remonta.spb.ru/portfolio/3/4.jpg&w=201&h=104&zc=1&q=100">
-                    </a>
-                </div>
-                <div class="col-xs-5 ddsc">
-                    <a class="remont-btn popmake-price pum-trigger" href="#"></a>
-                </div>
-            </div>
+
         </div>
     </div><!-- portfolio -->
 
@@ -356,6 +200,7 @@
                     <table>
                         <tbody>
                             <tr>
+                            <?php if( have_rows('apps_area') ): while ( have_rows('apps_area') ) : the_row(); ?>
                                 <td>
                                     <div class="area">
                                         <div class="icon_active">
@@ -363,27 +208,10 @@
                                             <br>
                                             <br>
                                         </div>
-                                        <p class="area-title">до 80 м<sup>2</sup></p>
+                                        <p class="area-title"><?php the_sub_field('area_app_item'); ?></p>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="area">
-                                        <div class="icon_active">
-                                            <i class="fa fa-check-circle-o"></i>
-                                            <br>
-                                        </div>
-                                        <p class="area-title">80-200 м<sup>2</sup></p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="area">
-                                        <div class="icon_active">
-                                            <i class="fa fa-check-circle-o"></i>
-                                            <br>
-                                        </div>
-                                        <p class="area-title">от 200 м<sup>2</sup></p>
-                                    </div>
-                                </td>
+                                <?php endwhile; endif; ?>
                             </tr>
                         </tbody>
                     </table>
@@ -394,42 +222,17 @@
                     <table>
                         <tbody>
                             <tr>
+                            <?php if( have_rows('repair_type') ): while ( have_rows('repair_type') ) : the_row(); ?>
                                 <td>
                                     <div class="area">
                                         <div class="icon_active">
                                             <i class="fa fa-check-circle-o"></i>
                                             <br>
                                         </div>
-                                        <p class="area-title">КОСМЕТИЧЕСКИЙ</p>
+                                        <p class="area-title"><?php the_sub_field('repair_type_item'); ?></p>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="area">
-                                        <div class="icon_active">
-                                            <i class="fa fa-check-circle-o"></i>
-                                            <br>
-                                        </div>
-                                        <p class="area-title">СТАНДАРТНЫЙ</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="area">
-                                        <div class="icon_active">
-                                            <i class="fa fa-check-circle-o"></i>
-                                            <br>
-                                        </div>
-                                        <p class="area-title">ЕВРОРЕМОНТ</p>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="area">
-                                        <div class="icon_active">
-                                            <i class="fa fa-check-circle-o"></i>
-                                            <br>
-                                        </div>
-                                        <p class="area-title">ЕВРОЛЮКС</p>
-                                    </div>
-                                </td>
+                                <?php endwhile; endif; ?>
                             </tr>
                         </tbody>
                     </table>
@@ -438,94 +241,23 @@
             </div>
             <div class="row">
                 <h3>Ознакомьтесь с портфолио:</h3>
-                <h4>Надоело смотреть красивые картинки ремонтов в интернете?<br>
-                    Приглашаем Вас на наши объекты для показа выполненных ремонтов под ключ,<br>просто позвоните нам!</h4>
+                <h4><?php the_field('portfolio_block_text'); ?></h4>
+                <?php if( have_rows('portfolio_items') ): while ( have_rows('portfolio_items') ) : the_row(); ?>
                 <div class="col-xs-4">
                     <div class="flip-container">
                         <div class="flipper">
-                            <a href="http://a-remonta.spb.ru/portfolio/">
+                            <a href="/portfolio.htm">
                                 <div class="block front">
                                     <div class="bg_block"></div>
                                     <div class="desc-line">
-                                        <div>Ремонт квартиры 1</div>
+                                        <div><?php the_sub_field('port_title'); ?></div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <a href="http://a-remonta.spb.ru/portfolio/">
-                                <div class="block front">
-                                    <div class="bg_block_item"></div>
-                                    <div class="desc-line">
-                                        <div>Ремонт квартиры 2</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <a href="http://a-remonta.spb.ru/portfolio/">
-                                <div class="block front">
-                                    <div class="bg_block_item_2"></div>
-                                    <div class="desc-line">
-                                        <div>Ремонт квартиры 3</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-4">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <a href="http://a-remonta.spb.ru/portfolio/">
-                                <div class="block front">
-                                    <div class="bg_block_item_3"></div>
-                                    <div class="desc-line">
-                                        <div>Ремонт квартиры 4</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <a href="http://a-remonta.spb.ru/portfolio/">
-                                <div class="block front">
-                                    <div class="bg_block_item_4"></div>
-                                    <div class="desc-line">
-                                        <div>Ремонт квартиры 5</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-4">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            <a href="http://a-remonta.spb.ru/portfolio/">
-                                <div class="block front">
-                                    <div class="bg_block_item_5"></div>
-                                    <div class="desc-line">
-                                        <div>Ремонт квартиры 6</div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <?php endwhile; endif; ?>
             </div>
         </div>
     </div><!-- calc -->
@@ -536,81 +268,35 @@
                 <h3>Этапы работы с клиентом:</h3>
             </div>
             <div class="row benefits">
+            <?php if( have_rows('working_with_client') ): while ( have_rows('working_with_client') ) : the_row(); ?>
                 <div class="col-xs-2">
                     <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-truck fa-stack-1x fa-inverse"></i>
+                  <?php the_sub_field('work_favicon'); ?>
                 </span>
-                    <h5>Бесплатный выезд на объект к клиенту</h5>
+                    <h5><?php the_sub_field('work_title'); ?></h5>
                     <br>
                 </div>
                 <div class="col-xs-1">
                     <i class="fa fa-arrow-right fa-stack-2x"></i>
                 </div>
-                <div class="col-xs-2">
-                    <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
-                </span>
-                    <h5>Составление детальной сметы на ремонт</h5>
-                    <br>
-                </div>
-                <div class="col-xs-1">
-                    <i class="fa fa-arrow-right fa-stack-2x"></i>
-                </div>
-                <div class="col-xs-2">
-                    <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-file-text fa-stack-1x fa-inverse"></i>
-                </span>
-                    <h5>Подписание договора</h5>
-                    <br>
-                </div>
-                <div class="col-xs-1">
-                    <i class="fa fa-arrow-right fa-stack-2x"></i>
-                </div>
-                <div class="col-xs-2">
-                    <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
-                </span>
-                    <h5>Закупка расходных и отделочных материалов</h5>
-                    <br>
-                </div>
+                <?php endwhile; endif; ?>
             </div>
+
             <div class="row benefits">
+            <?php if( have_rows('working_with_client_second') ): while ( have_rows('working_with_client_second') ) : the_row(); ?>
                 <div class="col-xs-3">
                     <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-wrench fa-stack-1x fa-inverse"></i>
+                  <?php the_sub_field('work_favicon_second'); ?>
                 </span>
-                    <h5>Ремонтно-отделочные работы</h5>
+                    <h5><?php the_sub_field('work_title_second'); ?></h5>
                     <br>
                 </div>
                 <div class="col-xs-1">
                     <i class="fa fa-arrow-right fa-stack-2x"></i>
                 </div>
-                <div class="col-xs-3">
-                    <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-check-square-o fa-stack-1x fa-inverse"></i>
-                </span>
-                    <h5>Приемка-сдача работ</h5>
-                    <br>
-                </div>
-                <div class="col-xs-1">
-                    <i class="fa fa-arrow-right fa-stack-2x"></i>
-                </div>
-                <div class="col-xs-3">
-                    <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x "></i>
-                  <i class="fa fa-shield fa-stack-1x fa-inverse"></i>
-                </span>
-                    <h5>Гарантийное послегарантийное обслуживание</h5>
-                    <br>
-                </div>
-                <div class="col-xs-1">
-                </div>
+                <?php endwhile; endif; ?>
             </div>
             <div class="col-xs-12">
                 <div class="btn btn-orange" type="button">
@@ -631,16 +317,7 @@
                 <div class="row">
                     <div class="info_">
                         <div>Контактная информация:</div>
-                        <strong>Наши телефоны</strong>
-                        <br> +7 (812) 603-44-17
-                        <br>
-                        <strong>Наш адрес:</strong>
-                        <br> 195220, г. Санкт-Петербург,
-                        <p>пр. Непокоренных, 17, корпус 4, лит. В, БЦ "Берег"</p>
-                        <br>
-                        <strong>Часы работы:</strong>
-                        <br> Понедельник-Пятница
-                        <br> (с 8:00 до 21:00)
+                        <?php the_field('contact_block_footer'); ?>
                     </div>
                 </div>
             </div>

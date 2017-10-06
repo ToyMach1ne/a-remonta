@@ -37,11 +37,11 @@
             </div>
             <div class="collapse navbar-collapse" id="example-navbar-collapse">
                 <ul class="nav navbar-nav navbar-center">
-                    <div class="center-block">Ремонт квартир в Санкт-Петербурге Фиксированная прозрачная смета</div>
+                    <div class="center-block"><?php the_field('header_text', 35); ?></div>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <div id="phone">+7 (812) 603-44-17
+                        <div id="phone"><?php the_field('header_phone', 35); ?>
                             <br><a href="#" class="popmake-callback pum-trigger recall_header">Перезвоните мне</a>
                         </div>
                     </li>
